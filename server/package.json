@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm build",
+    "start": "concurrently --kill-others \"npm watch\" \"nodemon .\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7",
+    "tslint": "^6.1.3",
+    "typescript": "^5.6.3"
+  }
+}
